@@ -43,11 +43,14 @@
   padding: 10px 50px;
 }
 .link:hover{
-  background-color:	#e0f3ff;
+  background-color:	#ceecfd;
+  color:#298299;
+  text-decoration: none;
 }
 .activeLink{
   font-weight: 700;
   background-color:	#e0f3ff;
+  color: #298299;
 }
 
 .content{
