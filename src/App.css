@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+/* Sidebar menu */
+.sidebar{
+  float:left;
+  background: rgb(33,201,159);
+  background: linear-gradient(140deg, rgba(33,201,159,1) 0%, rgba(41,130,153,1) 100%);
+  width:80px;
+  height:100vh;
+}
+.bm-menu {
+  background: rgb(33,201,159);
+  background: linear-gradient(140deg, rgba(33,201,159,1) 0%, rgba(41,130,153,1) 100%);
+  padding-top: 2.5em;
+  font-size: 1.15em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Sidebar button */
+.bm-burger-bars {
+  background: white;
+}
+.bm-burger-button {
+  position: fixed;
+  width: 24px;
+  height: 18px;
+  float: left;
+  left: 30px;
+  top: 25px;
+}
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+.bm-cross {
+  background: #e0f3ff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Sidebar items */
+.link {
+  display: inline-block;
+  font-size:20px;
+  font-weight: 300;
+  color:white;
+  transition: background-color 0.5s;
+  padding: 10px 50px;
+}
+.link:hover{
+  background-color:	#e0f3ff;
+}
+.activeLink{
+  font-weight: 700;
+  background-color:	#e0f3ff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content{
+  padding: 2em 6em;
 }
