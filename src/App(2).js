@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-do
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments, faBell} from '@fortawesome/free-regular-svg-icons'
 
+
 export default class App extends Component {
   constructor(props){
     super(props)
@@ -25,13 +26,13 @@ export default class App extends Component {
   render(){
     return (
       <Router>
-      <div className="App">
-        <div id="sidebar">
+      <div className="App" style={{flexDirection:'column'}}>
+        <div className="sidebar">
           <div
             className="sidebar"
             style={{display: this.state.menuOpen ? 'none' : 'block'}}>
           </div>
-          <Menu
+          <Menu 
             isOpen={this.state.menuOpen}
             onStateChange={(state) => this.handleStateChange(state)}
           >
@@ -45,47 +46,49 @@ export default class App extends Component {
             <Navbar.Text style={styles.label}>Charts</Navbar.Text>
           </Menu>
         </div>
-        
-      <Navbar variant="light" bg="light">
-        
-        <Navbar.Brand href="#">
-        <img src={require("./HDLogo.png")} width="100" crop="scale"
-          className="d-inline-block align-top"/>
-        </Navbar.Brand>
-        <div id="header-nav">
-        <Nav className="mr-auto">
-          {/* <FontAwesomeIcon icon={faAccusoft}  size="1x" color="#0A4877"/> */}
-          <Nav.Link >&nbsp;</Nav.Link>
-          <NavDropdown title="Home" className="nav-item">
-            <NavDropdown.Item href ="#"> dunno1</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="Setting" className="nav-item">
-            <NavDropdown.Item href ="#"> dunno2</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown title="Projects" className="nav-item">
-            <NavDropdown.Item href ="#"> dunno3</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link className="nav-item">
-              <FontAwesomeIcon icon={faComments}/>
-            <span>Contact</span>
-          </Nav.Link>
-        </Nav>
-        </div>
-        <Navbar className="ml-auto">
-          <Nav.Link>
-          <div class="icon-wrapper-bg bg-danger">
-            <FontAwesomeIcon icon={faBell}  className="iconNav"/>
+
+        <div className="other" style={{marginLeft: '5em', }}> 
+        <div className="w-100">
+        <Navbar variant="light" style={{marginTop: '-0.5em'}}>
+          <Navbar.Brand href="#">
+            <img src={require("./HDLogo.png")} width="100" crop="scale"
+              className="d-inline-block align-top"/>
+          </Navbar.Brand>
+          <div id="header-nav">
+            <Nav className="mr-auto" style={{float:'left'}}>
+              <Nav.Link >&nbsp;</Nav.Link>
+              <NavDropdown title="Home" className="nav-item">
+                <NavDropdown.Item href ="#"> dunno1</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Setting" className="nav-item">
+                <NavDropdown.Item href ="#"> dunno2</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Projects" className="nav-item">
+                <NavDropdown.Item href ="#"> dunno3</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link className="nav-item">
+                <FontAwesomeIcon icon={faComments}/>
+                <span>Contact</span>
+              </Nav.Link>
+            </Nav>
           </div>
-          </Nav.Link>
-          <Image src={require("./3.jpg")} roundedCircle className="small-avatar"/>
-          <Navbar.Text style={{padding:0,textAlign:"left"}}>
-            <h6 style={{marginBottom:0}}>Phuong Trinh</h6>
-             <div>Active</div>
+          
+          <Navbar className="ml-auto" style={{marginRight: '4em'}}>
+            <Nav.Link>
+              <div class="icon-wrapper-bg bg-danger">
+              <FontAwesomeIcon icon={faBell}  className="iconNav " size="4x" />
+              </div>
+            </Nav.Link>
+            <Image src={require("./3.jpg")} roundedCircle className="small-avatar"/>
+            <Navbar.Text style={{padding:0,textAlign:"left"}}>
+              <h6 style={{marginBottom:0}}>Phuong Trinh</h6>
+              <div>Active</div>
             </Navbar.Text>
+          </Navbar>
         </Navbar>
-      </Navbar>
-      
-      <div className="content">
+        </div>
+
+        <div className="content">
           <Switch>
             <Route path="/dashboard">
               <Dashboard/>
@@ -98,9 +101,9 @@ export default class App extends Component {
             </Route>
           </Switch>
         </div>
-        
       </div>
-      </Router>
+    </div>
+    </Router>
     );
   }
 }

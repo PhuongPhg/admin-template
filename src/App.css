@@ -99,17 +99,24 @@ li {
 span{
   padding-left: 0.66667rem;
 }
-/* .icon-wrapper-bg {
-  opacity: .1;
+.icon-wrapper-bg {
+  /* opacity: .1; */
+  width: 2.5rem;
+  height: 2.5rem;
   transition: opacity .2s;
   border-radius: 40px;
+  align-items: center;
 }
 .bg-danger {
   background-color: #d92550!important;
-} */
-iconNav{
-  background: #d92550;
-  border-radius: 50%;
-  height: 1em;
-  width: 1em;
 }
+/* iconNav{
+  background: #d92550;
+} */
+/* .circle-icon {
+  background: #ffc0c0;
+  width: 1.5rem;
+  height: 1.5rem;
+  
+  border-radius: 50%;
+} */
