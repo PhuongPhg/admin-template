@@ -25,8 +25,8 @@ export default class App extends Component {
   render(){
     return (
       <Router>
-      <div className="App" style={{flexDirection:'column'}}>
-        <div className="sidebar">
+      <div className="App">
+        <div id="sidebar">
           <div
             className="sidebar"
             style={{display: this.state.menuOpen ? 'none' : 'block'}}>
@@ -45,49 +45,47 @@ export default class App extends Component {
             <Navbar.Text style={styles.label}>Charts</Navbar.Text>
           </Menu>
         </div>
-
-        <div className="other" style={{marginLeft: '5em', }}> 
-        <div className="w-100">
-        <Navbar variant="light" style={{marginTop: '-0.5em'}}>
-          <Navbar.Brand href="#">
-            <img src={require("./HDLogo.png")} width="100" crop="scale"
-              className="d-inline-block align-top"/>
-          </Navbar.Brand>
-          <div id="header-nav">
-            <Nav className="mr-auto" style={{float:'left'}}>
-              <Nav.Link >&nbsp;</Nav.Link>
-              <NavDropdown title="Home" className="nav-item">
-                <NavDropdown.Item href ="#"> dunno1</NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Setting" className="nav-item">
-                <NavDropdown.Item href ="#"> dunno2</NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Projects" className="nav-item">
-                <NavDropdown.Item href ="#"> dunno3</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link className="nav-item">
-                <FontAwesomeIcon icon={faComments}/>
-                <span>Contact</span>
-              </Nav.Link>
-            </Nav>
-          </div>
-          
-          <Navbar className="ml-auto" style={{marginRight: '4em'}}>
-            <Nav.Link>
-              <div class="icon-wrapper-bg bg-danger">
-              <FontAwesomeIcon icon={faBell}  className="iconNav"/>
-              </div>
-            </Nav.Link>
-            <Image src={require("./3.jpg")} roundedCircle className="small-avatar"/>
-            <Navbar.Text style={{padding:0,textAlign:"left"}}>
-              <h6 style={{marginBottom:0}}>Phuong Trinh</h6>
-              <div>Active</div>
-            </Navbar.Text>
-          </Navbar>
-        </Navbar>
+        
+      <Navbar variant="light" bg="light">
+        
+        <Navbar.Brand href="#">
+        <img src={require("./HDLogo.png")} width="100" crop="scale"
+          className="d-inline-block align-top"/>
+        </Navbar.Brand>
+        <div id="header-nav">
+        <Nav className="mr-auto">
+          {/* <FontAwesomeIcon icon={faAccusoft}  size="1x" color="#0A4877"/> */}
+          <Nav.Link >&nbsp;</Nav.Link>
+          <NavDropdown title="Home" className="nav-item">
+            <NavDropdown.Item href ="#"> dunno1</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Setting" className="nav-item">
+            <NavDropdown.Item href ="#"> dunno2</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Projects" className="nav-item">
+            <NavDropdown.Item href ="#"> dunno3</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link className="nav-item">
+              <FontAwesomeIcon icon={faComments}/>
+            <span>Contact</span>
+          </Nav.Link>
+        </Nav>
         </div>
-
-        <div className="content">
+        <Navbar className="ml-auto">
+          <Nav.Link>
+          <div class="icon-wrapper-bg bg-danger">
+            <FontAwesomeIcon icon={faBell}  className="iconNav"/>
+          </div>
+          </Nav.Link>
+          <Image src={require("./3.jpg")} roundedCircle className="small-avatar"/>
+          <Navbar.Text style={{padding:0,textAlign:"left"}}>
+            <h6 style={{marginBottom:0}}>Phuong Trinh</h6>
+             <div>Active</div>
+            </Navbar.Text>
+        </Navbar>
+      </Navbar>
+      
+      <div className="content">
           <Switch>
             <Route path="/dashboard">
               <Dashboard/>
@@ -100,9 +98,9 @@ export default class App extends Component {
             </Route>
           </Switch>
         </div>
+        
       </div>
-    </div>
-    </Router>
+      </Router>
     );
   }
 }
