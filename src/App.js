@@ -75,8 +75,8 @@ export default class App extends Component {
         </div>
         <Navbar className="ml-auto">
           <Nav.Link>
-          <div class="icon-wrapper-bg bg-danger">
-            <FontAwesomeIcon icon={faBell}  className="iconNav" size="lg"/>
+          <div class="icon-wrapper-bg">
+            <FontAwesomeIcon icon={faBell}  className="iconNav" size="lg" color="#931a25"/>
           </div>
           </Nav.Link>
           <Image src={require("./3.jpg")} roundedCircle className="small-avatar"/>
