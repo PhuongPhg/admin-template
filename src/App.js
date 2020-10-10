@@ -80,10 +80,10 @@ export default class App extends Component {
                     <FontAwesomeIcon icon={faBell}  className="iconNav" size="lg" color="#931a25"/>
                   </div>
                 </Nav.Link>
-                <Image src={require("./3.jpg")} roundedCircle className="small-avatar"/>
+                <Image src={user.avatar} roundedCircle style={styles.avatar}/>
                 <Navbar.Text style={{padding:0,textAlign:"left"}}>
-                  <h6 style={{marginBottom:0}}>Phuong Trinh</h6>
-                  <div>Active</div>
+                  <h6 style={styles.username}>{user.username}</h6>
+                  <div style={styles.status}>Active</div>
                 </Navbar.Text>
               </Navbar>
             </Navbar>
@@ -110,6 +110,12 @@ function Analytics(){
   return <h1>Analytics Screen</h1>
 }
 
+const user = {
+  username: 'Phuong Trinh',
+  avatar: require("./3.jpg"),
+  status: 'Active'
+}
+
 const styles = {
   label:{
     color:'#e0f3ff',
@@ -117,5 +123,16 @@ const styles = {
     fontSize: 18,
     fontWeight: '700',
     marginLeft:30,
+  },
+  avatar:{
+    height: '2.7rem',
+  },
+  username:{
+    marginBottom:0,
+    marginLeft:10,
+  },
+  status:{
+    fontSize:15,
+    marginLeft:10
   }
 }
