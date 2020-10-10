@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import { Button, Row, Col, Container,Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown ,Image } from 'react-bootstrap';
 import { reveal as Menu } from 'react-burger-menu';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComments, faBell} from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments, faBell} from '@fortawesome/free-regular-svg-icons';
+import Dashboard from './Dashboard.js'
 
 export default class App extends Component {
   constructor(props){
@@ -104,10 +104,6 @@ export default class App extends Component {
       </Router>
     );
   }
-}
-
-function Dashboard(){
-  return <h1>Dashboard Screen</h1>
 }
 
 function Analytics(){
