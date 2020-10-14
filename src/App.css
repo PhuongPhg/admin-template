@@ -109,9 +109,9 @@ span{
   line-height: 2.5rem;
   background-color: #fdba9a!important;
 }
-
-.chartContainer{
-
+.strokeCircular{
+  /* stroke: linear-gradient(140deg, rgba(33,201,159,1) 0%, rgba(41,130,153,1) 100%); */
+  stroke: "#fdba9a"
 }
 
 .mapchart{
