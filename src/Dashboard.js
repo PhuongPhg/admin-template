@@ -37,6 +37,7 @@ export default function Dashboard(){
       <Row>
         <Col lg={3}>
           <Pie
+            width={200}
             height={200}
             data={activeUsers}
             options={{
@@ -73,10 +74,10 @@ export default function Dashboard(){
         </Col>  */}
       </Row>
 
-      <Row>
+      <div style={{width:'100%', height:100}}>
         <MapChart setTooltipContent={setContent}/>
         <ReactToolTip>{content}</ReactToolTip>
-      </Row>
+      </div>
     </div>
   )
 }
