@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import './App.css';
 import { Pie } from 'react-chartjs-2';
 import { Row, Col, } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import ReactToolTip from 'react-tooltip';
+import MapChart from './MapChart';
 const activeUsers = {
     labels: ['12-18', '19-30','30-60','>60'],
     datasets: [
@@ -28,50 +29,54 @@ const activeUsers = {
     ]
 };
 
-export default class Dashboard extends Component{
-  render(){
-    return(
-      <div>
-        <h5>Dashboard</h5>
-        <Row>
-          <Col lg={3}>
-            <Pie
-              height={200}
-              data={activeUsers}
-              options={{
-                title:{
-                  display:true,
-                  text:'Ages',
-                  fontSize:20
-                },
-                legend:{
-                  display:true,
-                  position:'bottom'
-                },
-                maintainAspectRatio:false
-              }}
-            />
-          </Col>
+export default function Dashboard(){
+  const [content, setContent] = useState("");
+  return(
+    <div>
+      <h5>Dashboard</h5>
+      <Row>
+        <Col lg={3}>
+          <Pie
+            height={200}
+            data={activeUsers}
+            options={{
+              title:{
+                display:true,
+                text:'Ages',
+                fontSize:20
+              },
+              legend:{
+                display:true,
+                position:'bottom'
+              },
+              maintainAspectRatio:false
+            }}
+          />
+        </Col>
 
-          {/* <Col lg={3}>
-            <Pie
-              data={data}
-              options={{
-                title:{
-                  display:true,
-                  text:'Something',
-                  fontSize:20
-                },
-                legend:{
-                  display:true,
-                  position:'right'
-                },
-                maintainAspectRatio:false
-              }}
-            />
-          </Col>  */}
-        </Row>
-      </div>
-    )
-  }
+        {/* <Col lg={3}>
+          <Pie
+            data={data}
+            options={{
+              title:{
+                display:true,
+                text:'Something',
+                fontSize:20
+              },
+              legend:{
+                display:true,
+                position:'right'
+              },
+              maintainAspectRatio:false
+            }}
+          />
+        </Col>  */}
+      </Row>
+
+      <Row>
+        <MapChart setTooltipContent={setContent}/>
+        <ReactToolTip>{content}</ReactToolTip>
+      </Row>
+    </div>
+  )
 }
