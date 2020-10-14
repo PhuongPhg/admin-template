@@ -40,7 +40,7 @@ export default class Dashboard extends Component{
                 // },
                 legend:{
                   display:true,
-                  position:'right'
+                  position:'bottom'
                 },
                 maintainAspectRatio:false
               }}
