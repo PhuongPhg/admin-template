@@ -1,3 +1,9 @@
+
+/* :root {
+  --rft-main-color:  ;
+  --rft-button-color:red;
+  --rft-even-row-color: #f3f3f3;
+} */
 /* Sidebar menu */
 .sidebar{
   float:left;
@@ -180,3 +186,6 @@ span{
     transform: rotate(18deg)
 }
 }
+/* .table-user tr{
+  background-color: 'red';
+} */
