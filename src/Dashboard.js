@@ -1,5 +1,7 @@
 import React, {Component, useState} from 'react';
+// import "react-flexy-table/dist/index.css"
 import './App.css';
+import './tableUser.css';
 import { Pie } from 'react-chartjs-2';
 import { Row, Col, } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +13,8 @@ import 'react-circular-progressbar/dist/styles.css';
 import { faUser} from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import WebFont from 'webfontloader';
+import ReactFlexyTable from "react-flexy-table"
+import dataList from './jsonData';
 
 WebFont.load({
   google: {
@@ -81,8 +85,8 @@ export default function Dashboard(){
           />
         </Col>
         <Col lg={4}>
-        <div style={{alignContent: 'center', textAlign:'center', verticalAlign:'center'}}>
-          <div style={{width: 170, }}>
+        <div style={{alignContent: 'center', textAlign:'center', verticalAlign:'center', margin:'auto', }}>
+          <div style={{width: 170, alignContent: "center", alignItems: 'center', margin: "auto"}}>
             <p style={{fontSize: 20, fontWeight: 'bold'}}>Active Users</p>
           <CircularProgressbarWithChildren 
             value={counter/active.total*100} 
@@ -97,30 +101,23 @@ export default function Dashboard(){
           </div>
         </div>
         </Col>
-
-        {/* <Col lg={3}>
-          <Pie
-            data={data}
-            options={{
-              title:{
-                display:true,
-                text:'Something',
-                fontSize:20
-              },
-              legend:{
-                display:true,
-                position:'right'
-              },
-              maintainAspectRatio:false
-            }}
-          />
-        </Col>  */}
+        <Col lg={4}>
+          <div >
+            <MapChart setTooltipContent={setContent}/>
+            <ReactToolTip>{content}</ReactToolTip>
+          </div>
+        </Col>
       </Row>
-
-      <div style={{width:'100%', height:100}}>
-        <MapChart setTooltipContent={setContent}/>
-        <ReactToolTip>{content}</ReactToolTip>
+      <div>
+      <ReactFlexyTable 
+      data={dataList} 
+      sortable 
+      globalSearch
+      pageSize={10}
+      // onPageChange={false}
+      />
       </div>
+      
     </div>
   )
 }
