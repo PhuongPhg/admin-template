@@ -98,7 +98,6 @@ span{
   padding-left: 0.66667rem;
 }
 .icon-wrapper-bg {
-  /* opacity: .1; */
   width: 2.5rem;
   height: 2.5rem;
   transition: opacity .2s;
@@ -107,13 +106,77 @@ span{
   text-align: center;
   vertical-align: middle;
   line-height: 2.5rem;
-  background-color: #fdba9a!important;
-}
-.strokeCircular{
-  /* stroke: linear-gradient(140deg, rgba(33,201,159,1) 0%, rgba(41,130,153,1) 100%); */
-  stroke: "#fdba9a"
+  /* background-color: #fdba9a!important; */
+  margin-right: 1rem;
 }
 
 .mapchart{
   height:100px;
+}
+.icon-spin:hover {
+  -webkit-animation: icon-spin 2s infinite linear;
+          animation: icon-spin 2s infinite linear;
+}
+.bell-rang:hover {
+  -webkit-animation: ring 2s ease infinite;
+    animation: ring 2s ease infinite;
+}
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+@keyframes ring {
+  0% {
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg)
+}
+
+2% {
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg)
+}
+
+4% {
+    -webkit-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    transform: rotate(-18deg)
+}
+
+6% {
+    -webkit-transform: rotate(18deg);
+    -ms-transform: rotate(18deg);
+    transform: rotate(18deg)
+}
+
+8% {
+    -webkit-transform: rotate(-22deg);
+    -ms-transform: rotate(-22deg);
+    transform: rotate(-22deg)
+}
+
+10% {
+    -webkit-transform: rotate(22deg);
+    -ms-transform: rotate(22deg);
+    transform: rotate(22deg)
+}
+
+12% {
+    -webkit-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    transform: rotate(-18deg)
+}
+
+14% {
+    -webkit-transform: rotate(18deg);
+    -ms-transform: rotate(18deg);
+    transform: rotate(18deg)
+}
 }
