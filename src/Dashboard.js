@@ -10,39 +10,53 @@ import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } fro
 import 'react-circular-progressbar/dist/styles.css';
 import { faUser} from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import WebFont from 'webfontloader';
 
+WebFont.load({
+  google: {
+    families: ['Roboto Web:300,400,700', 'sans-serif']
+  }
+});
 const activeUsers = {
     labels: ['12-18', '19-30','30-60','>60'],
     datasets: [
         {
         label: 'Rainfall',
         backgroundColor: [
-          '#B21F00',
-          '#C9DE00',
-          '#2FDE00',
-          '#00A6B4',
+          // '#B21F00',
+          // '#C9DE00',
+          // '#2FDE00',
+          // '#00A6B4',
+          '#0E6980', '#159AD0', '#4EBDB8', '#CADEE4'
+          
         ],
         hoverBackgroundColor: [
-        '#501800',
-        '#4B5000',
-        '#175000',
-        '#003350',
+        // '#501800',
+        // '#4B5000',
+        // '#175000',
+        // '#003350',
+        '#073440', '#0a4c68', '#24615e', '#487e8e'
         ],
         data: [65, 59, 80, 81]
         }
     ]
 };
 const active={
-  active: 47453,
-  total: 54000,
+  active: 4745300,
+  total: 5400000,
 };
+function counterForm (num){
+  if(num>1000) return <p>{num%1000}k</p>
+  else return<p>{num}</p>
+}
 export default function Dashboard(){
   const [content, setContent] = useState("");
   const [counter, setCounter] = React.useState(0);
   React.useEffect(() => {
-    counter <active.active && setTimeout(() => setCounter(counter + 234), 50);
+    counter <active.active && setTimeout(() => setCounter(counter + 14210), 0.000005);
+    if(counter > active.active) setTimeout(() => setCounter(active.active), 10);
   }, [counter]);
-
+  
   return(
     <div>
       <h5>Dashboard</h5>
@@ -73,11 +87,11 @@ export default function Dashboard(){
           <CircularProgressbarWithChildren 
             value={counter/active.total*100} 
             // text={`${counter}%`} 
-            styles={buildStyles({pathColor: `rgba(33,201,159,1)`, })}
+            styles={buildStyles({pathColor: '#4EBDB8', })}
           >
             <div style={{ fontSize: 16, marginTop: -5, flexDirection: "column", verticalAlign:'center', marginTop: 10}}>
-              <FontAwesomeIcon icon={faUser} size="2x" color={`rgba(33,201,159,1)`}/>
-              <p style={{marginTop: 10}}><strong>{counter}</strong></p>
+              <FontAwesomeIcon icon={faUser} size="2x" color='#4EBDB8'/>
+              <p style={{marginTop: 10, color: "#968c83"}}><strong>{counterForm(counter)}</strong></p>
             </div>
           </CircularProgressbarWithChildren>
           </div>

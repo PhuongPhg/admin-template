@@ -5,8 +5,9 @@ import { Navbar, Nav, NavDropdown ,Image } from 'react-bootstrap';
 import { reveal as Menu } from 'react-burger-menu';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments, faBell} from '@fortawesome/free-regular-svg-icons';
-import Dashboard from './Dashboard.js'
+import { faComments, } from '@fortawesome/free-regular-svg-icons';
+import { faCog, faBell} from '@fortawesome/free-solid-svg-icons';
+import Dashboard from './Dashboard.js';
 
 export default class App extends Component {
   constructor(props){
@@ -75,11 +76,14 @@ export default class App extends Component {
               </div>
               
               <Navbar className="ml-auto">
-                <Nav.Link>
-                  <div class="icon-wrapper-bg">
-                    <FontAwesomeIcon icon={faBell}  className="iconNav" size="lg" color="#931a25"/>
+                {/* <Nav.Link> */}
+                  <div class="icon-wrapper-bg" style={{backgroundColor: '#b0cac7'}}>
+                    <FontAwesomeIcon icon={faCog} size="lg" color='#36504d'className="icon-spin"/>
                   </div>
-                </Nav.Link>
+                  <div class="icon-wrapper-bg" style={{backgroundColor: '#f5a386'}} >
+                    <FontAwesomeIcon icon={faBell}  className="iconNav" size="lg" color="#bb3b0e" className="bell-rang"/>
+                  </div>
+                {/* </Nav.Link> */}
                 <Image src={user.avatar} roundedCircle style={styles.avatar}/>
                 <Navbar.Text style={{padding:0,textAlign:"left"}}>
                   <h6 style={styles.username}>{user.username}</h6>

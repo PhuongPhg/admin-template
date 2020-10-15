@@ -21,10 +21,12 @@
     "react-circular-progressbar": "^2.0.3",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
+    "react-flexy-table": "^1.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-simple-maps": "^2.1.2",
-    "react-tooltip": "^4.2.10"
+    "react-tooltip": "^4.2.10",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
