@@ -5,6 +5,11 @@
   --rft-even-row-color: #f3f3f3;
 } */
 /* Sidebar menu */
+.style-navbar {
+  background: linear-gradient(140deg, rgba(33,201,159,1) 0%, rgba(41,130,153,1) 100%);
+  margin:0;
+  padding: 20px 25px ;
+}
 .sidebar{
   float:left;
   background: rgb(33,201,159);
@@ -61,7 +66,8 @@
 }
 
 .content{
-  padding: 2em 6em;
+  /* padding: 2em 6em; */
+  margin-left:80px;
 }
 
 /* Navbar */

@@ -62,7 +62,7 @@ export default function Dashboard(){
   }, [counter]);
   
   return(
-    <div>
+    <div style={{backgroundColor: "white", padding: 30, borderRadius: 15, marginLeft: 85}}>
       <h5>Dashboard</h5>
       <Row>
         <Col lg={4}>
@@ -107,8 +107,8 @@ export default function Dashboard(){
             <ReactToolTip>{content}</ReactToolTip>
           </div>
         </Col>
-      </Row>
-      <div>
+      <div style={{textAlign: 'center'}}>
+      <div style={{width: '90%', display: 'inline-block'}}>
       <ReactFlexyTable 
       data={dataList} 
       sortable 
@@ -117,6 +117,9 @@ export default function Dashboard(){
       // onPageChange={false}
       />
       </div>
+      </div>
+
+      </Row>
       
     </div>
   )
