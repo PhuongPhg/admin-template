@@ -66,7 +66,6 @@ export const NavigationBar = () => (
       </Form> */}
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto cl-effect-1">
-          {/* <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>  */}
           <Nav.Item><Nav.Link href="/about" >Setting</Nav.Link></Nav.Item>
           <div style={{flexDirection: 'row', }}>
             <img src={user.avatar} width="50" crop="scale" style={{borderRadius: 25}}
