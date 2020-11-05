@@ -9,11 +9,11 @@ const Styles = styled.div`
     color: white;
     &:hover { color: white}
   }
-  .navbar-brand {
-    font-size: 1.4em;
-    color: white;
-    &:hover { font-weight: 'bold' };
-  }
+  // .navbar-brand {
+  //   font-size: 1.4em;
+  //   color: white;
+  //   &:hover { font-weight: 'bold' };
+  // }
   .form-center {
     position: absolute !important;
     left: 25%;
@@ -56,14 +56,14 @@ const Styles = styled.div`
 export const NavigationBar = () => (
   <Styles >
     <Navbar expand="lg" >
-      <Navbar.Brand href="/">   
-        <img src={require("../HDLogo.png")} width="100" crop="scale"
+      {/* <Navbar.Brand href="/">   
+        <img src={require("../HDLogo.png")} width="150" crop="scale"
               className="d-inline-block align-top"/>
-      </Navbar.Brand>
+      </Navbar.Brand> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-      {/* <Form className="form-center">
+      <Form className="form-center">
         <FormControl type="text" placeholder="Search" className="" />
-      </Form> */}
+      </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto cl-effect-1">
           <Nav.Item><Nav.Link href="/about" >Setting</Nav.Link></Nav.Item>
