@@ -45,7 +45,7 @@ export default class Sidebar extends React.Component {
                           <DashboardIcon 
                             onMouseOver={() => this.setState({hover: true, key: 'dash'})}
                             onMouseOut={() =>  this.setState({hover: false, key: ''})}
-                            style={(this.state.hover && this.state.key=='dash') ? {color: '#237c56', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
+                            style={(this.state.hover && this.state.key=='dash') ? {color: 'white', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
                         </IconButton>
                       </Tooltip>
                     </Link>
@@ -57,7 +57,7 @@ export default class Sidebar extends React.Component {
                           <BarChartIcon
                             onMouseOver={() => this.setState({hover: true, key: 'analytics'})}
                             onMouseOut={() =>  this.setState({hover: false, key:''})}
-                            style={(this.state.hover && this.state.key=='analytics') ? {color: '#237c56', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
+                            style={(this.state.hover && this.state.key=='analytics') ? {color: 'white', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
                         </IconButton>
                       </Tooltip>   
                     </Link>
