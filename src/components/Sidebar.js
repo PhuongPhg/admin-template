@@ -5,7 +5,11 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUser} from '@fortawesome/free-solid-svg-icons'
 import Dashboard from '../Dashboard.js';
-// import { Link } from 'react-router'
+// import MaterialIcon, {colorPalette} from 'material-icons-react';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import BarChartIcon from '@material-ui/icons/BarChart';
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const StyledSideNav = styled.div`
   position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
@@ -17,13 +21,17 @@ const StyledSideNav = styled.div`
   overflow-x: hidden;     /* Disable horizontal scroll */
   padding-top: 15px;
   color: white;
-  
+  MaterialIcon{
+    &:hover{
+      color: black;
+    }
+  }
 `;
 
 export default class Sidebar extends React.Component {
     constructor(props){
         super(props);
-        this.state = { hover: false };
+        this.state = { hover: false, key: '' };
     }
     render() {
     return (
@@ -32,20 +40,26 @@ export default class Sidebar extends React.Component {
             <div style={{display: 'flex', flexDirection: "column"}}>
                 <div style={{padding: 10, textAlign: 'center', marginBottom: 10}}>
                     <Link to='/'>
-                        <FontAwesomeIcon icon={faHome} size="3x" color=" rgba(255,255,255,0.7)" 
-                        onMouseOver={() => this.setState({hover: true})}
-                        onMouseLeave={() =>  this.setState({hover: false})}
-                        style={this.state.hover ? { color: "white" } : {}}
-                        />
+                      <Tooltip title={<div style={{fontSize: 13}}>Dashboard</div>}>
+                        <IconButton aria-label="dashboard">
+                          <DashboardIcon 
+                            onMouseOver={() => this.setState({hover: true, key: 'dash'})}
+                            onMouseOut={() =>  this.setState({hover: false, key: ''})}
+                            style={(this.state.hover && this.state.key=='dash') ? {color: 'white', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
+                        </IconButton>
+                      </Tooltip>
                     </Link>
                 </div>
                 <div style={{padding: 10, textAlign: "center"}}>
                     <Link to='/about'>
-                        <FontAwesomeIcon icon={faUser} size="3x" color=" rgba(255,255,255,0.7)" 
-                        onMouseOver={() => this.setState({hover: true})}
-                        onMouseLeave={() =>  this.setState({hover: false})}
-                        style={this.state.hover ? { color: "white" } : {}}
-                        />
+                      <Tooltip title={<div style={{fontSize: 13}}>Analytics</div>}>
+                        <IconButton aria-label="dashboard">
+                          <BarChartIcon
+                            onMouseOver={() => this.setState({hover: true, key: 'analytics'})}
+                            onMouseOut={() =>  this.setState({hover: false, key:''})}
+                            style={(this.state.hover && this.state.key=='analytics') ? {color: 'white', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
+                        </IconButton>
+                      </Tooltip>   
                     </Link>
                 </div>
             </div>
