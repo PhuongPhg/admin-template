@@ -84,21 +84,21 @@ export default function Dashboard(){
       animationEnabled: true,
       // theme: "light2", // "light1", "dark1", "dark2"
       title:{
-          text: "Bounce Rate by Week of Year"
+          text: "Total call by day of month"
       },
       axisY: {
-          title: "Bounce Rate",
+          title: "Total calls",
           includeZero: false,
           suffix: "%"
       },
       axisX: {
-          title: "Week of Year",
-          prefix: "W",
-          interval: 2
+          title: "Day of the month",
+          prefix: "d",
+          interval: 1
       },
       data: [{
           type: "line",
-          toolTipContent: "Week {x}: {y}%",
+          toolTipContent: "Day {x}: {y}%",
           dataPoints: [
               { x: 1, y: 64 },
               { x: 2, y: 61 },
@@ -118,7 +118,13 @@ export default function Dashboard(){
               { x: 19, y: 58 },
               { x: 20, y: 54 },
               { x: 21, y: 59 },
-              { x: 23, y: 59 }
+              { x: 23, y: 59 },
+              { x: 24, y: 45 },
+              { x: 25, y: 35 },
+              { x: 26, y: 25 },
+              { x: 27, y: 17 },
+              { x: 28, y: 17 },
+
           ]
       }]
   }
