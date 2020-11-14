@@ -4,9 +4,7 @@ import CanvasJSReact from './canvasjs.react';
 import ReactFlexyTable from "react-flexy-table";
 import dataList from './jsonData';
 import './tableUser.css';
-import dashboardLineChart from './dashboardLineChart';
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import Chart from "react-apexcharts";
 
 const Styles = styled.div`
   .left-half, .right-half{
@@ -55,79 +53,72 @@ const Styles = styled.div`
   
 export default function Dashboard(){
   const [content, setContent] = useState("");
-  const options = {
-    backgroundColor: "transparent",
-    // colorSet:['#d9e1ff', '#b3cfff', '#80dbc9', '#65d0d0', '#8ec6f7'],
-    data: [{
-      indexLabelFontColor: "#bb6042",
-      indexLabelLineColor: "#bb6042",
-      type: "pie",
-      startAngle: 160,
-      toolTipContent: "<b>{label}</b>: {y}%",
-      showInLegend: "true",
-      legendText: "{label}",
-      indexLabelFontSize: 16,
-      indexLabel: "{label} - {y}%",
-      dataPoints: [
-        { y: 33, label: "Ha Noi", color: '#a84d2f' },
-        { y: 31, label: "Ho Chi Minh", color: '#bb6042' },
-        { y: 15, label: "Da Nang", color: '#cf7356' },
-        { y: 9, label: "Nha Trang", color: '#e28769' },
-        {y: 21, label: "Others", color: '#f59a7c' }
-      ]
-    }]
-    };
+  
     const optionsLine = {
-      backgroundColor: "transparent",
-      height: 250,
-      margin: 30,
-      animationEnabled: true,
-      // theme: "light2", // "light1", "dark1", "dark2"
-      title:{
-          text: "Total call by day of month"
+      series: [{
+        name: "Calls",
+        data: [10, 41, 35, 51, 49, 62, 69]
+    }],
+    options: {
+      chart: {
+        height: 350,
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+        toolbar: {
+          show: false
+        }
       },
-      axisY: {
-          title: "Total calls",
-          includeZero: false,
-          suffix: "%"
+      dataLabels: {
+        enabled: false
       },
-      axisX: {
-          title: "Day of the month",
-          prefix: "d",
-          interval: 1
+      stroke: {
+        curve: 'straight'
       },
-      data: [{
-          type: "line",
-          toolTipContent: "Day {x}: {y}%",
-          dataPoints: [
-              { x: 1, y: 64 },
-              { x: 2, y: 61 },
-              { x: 3, y: 64 },
-              { x: 4, y: 62 },
-              { x: 5, y: 64 },
-              { x: 6, y: 60 },
-              { x: 7, y: 58 },
-              { x: 8, y: 59 },
-              { x: 9, y: 53 },
-              { x: 10, y: 54 },
-              { x: 11, y: 61 },
-              { x: 12, y: 60 },
-              { x: 13, y: 55 },
-              { x: 15, y: 56 },
-              { x: 18, y: 63 },
-              { x: 19, y: 58 },
-              { x: 20, y: 54 },
-              { x: 21, y: 59 },
-              { x: 23, y: 59 },
-              { x: 24, y: 45 },
-              { x: 25, y: 35 },
-              { x: 26, y: 25 },
-              { x: 27, y: 17 },
-              { x: 28, y: 17 },
-
-          ]
-      }]
+      // title: {
+      //   text: 'Total calls by day',
+      //   align: 'left'
+      // },
+      grid: {
+        row: {
+          colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+          opacity: 0.5
+        },
+      },
+      xaxis: {
+        categories: ['1', '5', '10', '15', '20','25','30']
+      }
+    },
   }
+  const optionApexPie ={
+    series: [44, 55, 13, 43, 22],
+    options: {
+      chart: {
+        width: 380,
+        type: 'pie',
+      },
+      labels: ['Ha Noi', 'Ho Chi Minh', 'Da Nang', 'Nha Trang', 'Others'],
+      theme: {
+        monochrome: {
+          enabled: true,
+          color: '#a84d2f',
+        },
+        title: {
+          text: "Monochrome Pie"
+        },
+        responsive: [{
+          breakpoint: 480,
+            options: {
+              chart: {
+                width: 200
+              },
+              legend: {
+                position: 'bottom'
+              }
+            }
+      }]
+  }}}
   return(
     <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
     <Styles>
@@ -142,13 +133,17 @@ export default function Dashboard(){
           <p className="graText">3.000.000/4.500.000</p>
         </div>
       </div>
-      <div className="right-half" style={{backgroundColor: 'white', flex:2, justifyContent: 'center'}}>
-        <CanvasJSChart options = {optionsLine} />
+      <div className="right-half" style={{backgroundColor: 'white', flex:2, justifyContent: 'space-between'}}>
+        {/* <CanvasJSChart options = {optionsLine} /> */}
+        <h4 style={{marginLeft: 15, marginTop: 15}}>Total calls by day</h4>
+        <Chart options={optionsLine.options} 
+        series={optionsLine.series} type="line" height="200" style={{marginTop: 0}}/>
       </div>
       </div>
       <div style={{display: 'flex', flexDirection: 'row', }}>
         <div style={{flex: 1, padding: 10, }}>
-        <CanvasJSChart options = {options}/>
+        {/* <CanvasJSChart options = {options}/> */}
+        <Chart options={optionApexPie.options} series={optionApexPie.series} type="pie"/>
         </div>
       <div className="table-div" style={{ flex: 2}}>
       <ReactFlexyTable 
