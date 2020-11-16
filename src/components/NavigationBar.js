@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Styles = styled.div`
   .navbar { 
     background-color: 'transparent'; 
+    // position: 'fixed'
   }
   a, .navbar-nav, .navbar-light .nav-link {
     color: white;
@@ -54,8 +55,8 @@ const Styles = styled.div`
 }
 `;
 export const NavigationBar = () => (
-  <Styles >
-    <Navbar expand="lg" >
+  <Styles style={{position: 'sticky'}}>
+    <Navbar expand="lg"  >
       {/* <Navbar.Brand href="/">   
         <img src={require("../HDLogo.png")} width="150" crop="scale"
               className="d-inline-block align-top"/>

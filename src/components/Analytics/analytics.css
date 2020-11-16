@@ -1,0 +1,25 @@
+.innerBox{
+    border-radius: 20px;
+    padding: 0.5rem 0;
+    background-color: white;
+    text-align: center;
+};
+.graText{
+    text-transform: uppercase;
+	background: linear-gradient(to right, #19adb1 0%,  #0a6dc3 100%);
+	/* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    font-weight: bold;
+}
+.rowFour{
+    flex: 1;
+    background-color: white;
+    /* margin: 6px 20px; */
+    margin-top: 6px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding: 10;
+    border-radius: 20px;
+}

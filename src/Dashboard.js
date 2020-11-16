@@ -1,10 +1,10 @@
 import React, {Component, useState} from 'react';
 import styled from 'styled-components';
-import CanvasJSReact from './canvasjs.react';
 import ReactFlexyTable from "react-flexy-table";
 import dataList from './jsonData';
 import './tableUser.css';
 import Chart from "react-apexcharts";
+import './backgroundColor.css';
 
 const Styles = styled.div`
   .left-half, .right-half{
@@ -53,7 +53,6 @@ const Styles = styled.div`
   
 export default function Dashboard(){
   const [content, setContent] = useState("");
-  
     const optionsLine = {
       series: [{
         name: "Calls",
@@ -120,7 +119,8 @@ export default function Dashboard(){
       }]
   }}}
   return(
-    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
+    // <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
+    <div className="backgroundInner">
     <Styles>
       <div style={{display: 'flex', flexDirection: 'row', }}>
       <div className="left-half" style={{flex:1, flexDirection: 'column', justifyContent: "space-between"}} >
@@ -134,10 +134,11 @@ export default function Dashboard(){
         </div>
       </div>
       <div className="right-half" style={{backgroundColor: 'white', flex:2, justifyContent: 'space-between'}}>
-        {/* <CanvasJSChart options = {optionsLine} /> */}
         <h4 style={{marginLeft: 15, marginTop: 15}}>Total calls by day</h4>
+        {/* <Chart options={optionsLine.options} 
+        series={optionsLine.series} type="line" height="200" style={{marginTop: 0}}/> */}
         <Chart options={optionsLine.options} 
-        series={optionsLine.series} type="line" height="200" style={{marginTop: 0}}/>
+    series={optionsLine.series} type="line" height="200" style={{marginTop: 0}}/>
       </div>
       </div>
       <div style={{display: 'flex', flexDirection: 'row', }}>

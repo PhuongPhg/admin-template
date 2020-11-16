@@ -3,3 +3,12 @@
     height: '100vh';
     min-height: 100vh;
   }
+.backgroundInner{
+  margin-left: 140px;
+  border-top-left-radius: 20px; 
+  padding-left: 20px;
+  padding-top: 20px;
+  background-color: #e8f1ed;
+  overflow: 'hidden';
+  height: 100vh;
+}

@@ -11,7 +11,10 @@ import BarChartIcon from '@material-ui/icons/BarChart';
 import IconButton from "@material-ui/core/IconButton";
 import CallIcon from '@material-ui/icons/Call';
 import RoomIcon from '@material-ui/icons/Room';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import Tooltip from "@material-ui/core/Tooltip";
+import Analytics from './Analytics/analytics';
+import PersonIcon from '@material-ui/icons/Person';
 
 const StyledSideNav = styled.div`
   position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
@@ -31,6 +34,9 @@ const StyledSideNav = styled.div`
   .smaller-Analytics{
     display: 'flex';
     flex-direction: 'column';
+  };
+  .visibleDiv{
+    transition: visibility 0s, opacity 0.5s ease-in;
   }
 `;
 
@@ -63,7 +69,7 @@ export default class Sidebar extends React.Component {
                     </Link>
                 </div>
                 <div style={{padding: 10, textAlign: "center"}}>
-                    {/* <Link to='/about'> */}
+                    <Link to='/analytics'>
                       <Tooltip title={<div style={{fontSize: 13}}>Analytics</div>}>
                         <IconButton aria-label="analytics">
                           <BarChartIcon
@@ -72,10 +78,24 @@ export default class Sidebar extends React.Component {
                             style={(this.state.hover && this.state.key=='analytics') ? {color: 'white', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
                         </IconButton>
                       </Tooltip>   
-                    {/* </Link> */}
+                    </Link>
                 </div>
                 { this.state.showSmallerIcon ? 
                   (
+                    <div className="visibleDiv">
+                  <div style={{padding: 10, textAlign: "center", }}
+                  onMouseEnter={() => this.setState({showSmallerIcon: true})}
+                  onMouseLeave={() => this.setState({showSmallerIcon: false})}
+                  >
+                    <Tooltip title={<div style={{fontSize: 13}}>User</div>}>
+                    <IconButton aria-label="analytics">
+                    <PeopleAltIcon  style={{flex: 1, fontSize: 30}}
+                      onMouseOver={() => this.setState({hover: true, key: '', smallerKey: 'user'})}
+                      onMouseOut={() => this.setState({hover: false, key:'', smallerKey: ''})}
+                      style={(this.state.hover  && this.state.smallerKey=='user') ? {color: 'white', fontSize: 30} : {color: 'rgba(255,255,255,0.7)', fontSize: 30}}/>
+                      </IconButton>
+                    </Tooltip>
+                  </div>
                   <div style={{padding: 10, textAlign: "center", }}
                   onMouseEnter={() => this.setState({showSmallerIcon: true})}
                   onMouseLeave={() => this.setState({showSmallerIcon: false})}
@@ -89,14 +109,40 @@ export default class Sidebar extends React.Component {
                       </IconButton>
                     </Tooltip>
                   </div>
+                  <div style={{padding: 10, textAlign: "center", }}
+                  onMouseEnter={() => this.setState({showSmallerIcon: true})}
+                  onMouseLeave={() => this.setState({showSmallerIcon: false})}
+                  >
+                    <Tooltip title={<div style={{fontSize: 13}}>Area</div>}>
+                    <IconButton aria-label="analytics">
+                    <RoomIcon  style={{flex: 1, fontSize: 30}}
+                      onMouseOver={() => this.setState({hover: true, key: '', smallerKey: 'area'})}
+                      onMouseOut={() => this.setState({hover: false, key:'', smallerKey: ''})}
+                      style={(this.state.hover  && this.state.smallerKey=='area') ? {color: 'white', fontSize: 30} : {color: 'rgba(255,255,255,0.7)', fontSize: 30}}/>
+                      </IconButton>
+                    </Tooltip>
+                  </div>
+                  </div>
                   ) 
                   : (null)
                 }
+                <div style={{padding: 10, textAlign: "center"}}>
+                    <Link to='/analytics'>
+                      <Tooltip title={<div style={{fontSize: 13}}>Profile</div>}>
+                        <IconButton aria-label="analytics">
+                          <PersonIcon
+                            onMouseOver={() => this.setState({hover: true, key: 'profile', showSmallerIcon: true, smallerKey: ''})}
+                            onMouseOut={() => this.setState({hover: false, key:'',})}
+                            style={(this.state.hover && this.state.key=='profile') ? {color: 'white', fontSize: 55} : {color: 'rgba(255,255,255,0.7)', fontSize: 55}}/>
+                        </IconButton>
+                      </Tooltip>   
+                    </Link>
+                </div>
             </div>
         </StyledSideNav>
         <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route path="/about" component={item2} />
+        <Route path="/analytics" component={Analytics} />
       </Switch>
       </div>
     );
