@@ -58,7 +58,7 @@ export const NavigationBar = () => (
   <Styles style={{position: 'sticky'}}>
     <Navbar expand="lg"  >
       {/* <Navbar.Brand href="/">   
-        <img src={require("../HDLogo.png")} width="150" crop="scale"
+        <img src={require("../assets/HDLogo.png")} width="150" crop="scale"
               className="d-inline-block align-top"/>
       </Navbar.Brand> */}
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -84,6 +84,6 @@ export const NavigationBar = () => (
 )
 const user = {
   username: 'Phuong Trinh',
-  avatar: require("../3.jpg"),
+  avatar: require("../assets/3.jpg"),
   status: 'Active'
 }

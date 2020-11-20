@@ -39,7 +39,7 @@ function item4(){
 
 const user = {
   username: 'Phuong Trinh',
-  avatar: require("./3.jpg"),
+  avatar: require("./assets/3.jpg"),
   status: 'Active'
 }
 
