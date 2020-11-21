@@ -36,14 +36,11 @@
     "styled-components": "^5.2.1",
     "webfontloader": "^1.6.28"
   },
-  "homepage": "https://phuongphg.github.io/admin-template",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

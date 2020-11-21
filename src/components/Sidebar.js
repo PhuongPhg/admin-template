@@ -17,6 +17,7 @@ import Analytics from './Analytics/analytics';
 import PersonIcon from '@material-ui/icons/Person';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import userAnalytics from './Analytics/userAnalytics.js';
+import loanAnalytics from './Analytics/loanAnalytics';
 
 const StyledSideNav = styled.div`
   position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
@@ -103,6 +104,7 @@ export default class Sidebar extends React.Component {
                   onMouseEnter={() => this.setState({showSmallerIcon: true})}
                   onMouseLeave={() => this.setState({showSmallerIcon: false})}
                   >
+                    <Link to="/loanAnalytics">
                     <Tooltip title={<div style={{fontSize: 13}}>Loan Analytics</div>}>
                     <IconButton aria-label="analytics">
                     <AccountBalanceIcon  style={{flex: 1, fontSize: 30}}
@@ -111,6 +113,7 @@ export default class Sidebar extends React.Component {
                       style={(this.state.hover  && this.state.smallerKey=='loan') ? {color: 'white', fontSize: 30} : {color: 'rgba(255,255,255,0.7)', fontSize: 30}}/>
                       </IconButton>
                     </Tooltip>
+                    </Link>
                   </div>
                   <div style={{padding: 10, textAlign: "center", }}
                   onMouseEnter={() => this.setState({showSmallerIcon: true})}
@@ -160,6 +163,7 @@ export default class Sidebar extends React.Component {
         <Route exact path="/" component={Dashboard} />
         <Route path="/analytics" component={Analytics} />
         <Route path="/userAnalytics" component={userAnalytics} />
+        <Route path="/loanAnalytics" component={loanAnalytics} />
       </Switch>
       </div>
     );

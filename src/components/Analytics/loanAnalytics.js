@@ -11,10 +11,10 @@ export default function loanAnalytics(){
   return(
     <div className="backgroundInner">
       <div className="table-div" style={{flex: 1, padding: 0}}>
-            <h4 style={{marginLeft: 15, marginTop: 15, paddingBottom: 10}}>Total calls</h4>
-            <Chart options={totalTimeOfEachCall.options} 
-              series={totalTimeOfEachCall.series} type="line" height="75%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
-          </div>
+        <h4 style={{marginLeft: 15, marginTop: 15, paddingTop: 10, paddingBottom: 10}}>Total calls</h4>
+        <Chart options={totalRecharge.options} 
+          series={totalRecharge.series} type="bar" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>          
+      </div>
     </div>
   )
 }

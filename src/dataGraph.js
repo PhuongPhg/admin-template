@@ -123,8 +123,10 @@ export const totalRecharge = {
       }
     },
     tooltip: {
-      custom: function({series, seriesIndex, dataPointIndex, w}) {
-      return '<span>' + series[seriesIndex][dataPointIndex] +'s' + '</span>'
+      y: {
+        formatter: function (val) {
+          return "$ " + val + " thousands"
+        }
     }
   },
   colors: ["#19adb1", "#0a6dc3"],
