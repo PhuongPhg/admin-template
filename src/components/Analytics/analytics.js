@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import userAnalytics from './userAnalytics';
 import loanAnalytics from './loanAnalytics';
+import rechargeAnalytics from './rechargeAnalytics';
+import regionAnalytics from './regionAnalytics';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import RoomIcon from '@material-ui/icons/Room';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
@@ -75,16 +77,20 @@ export default function Analytics() {
             </Link>
           </div>
           <div style={{flex: 1}}>
+            <Link to="/rechargeAnalytics">
             <div className="table-div" style={{ flex: 1, padding: 10, textAlign: 'center'}}>
               <LocalAtmIcon style={{ fontSize: 40, marginTop: 20 }}/>
               <h4 style={{paddingTop: 15}}>Recharge Analytics</h4>
             </div>
+            </Link>
           </div>
           <div style={{flex: 1}}>
+            <Link to="/regionAnalytics">
             <div className="table-div" style={{ flex: 1, padding: 10, textAlign: 'center'}}>
               <RoomIcon style={{ fontSize: 40, marginTop: 20 }}/>
               <h4 style={{paddingTop: 15}}>Region Analytics</h4>
             </div>
+            </Link>
           </div>
         </div>
       {/* <div style={{display: 'flex', flexDirection: 'row', }}>
@@ -149,6 +155,8 @@ export default function Analytics() {
         {/* <Route exact path="/" component={Dashboard} /> */}
         <Route path="/userAnalytics" component={userAnalytics} />
         <Route path="/loanAnalytics" component={loanAnalytics} />
+        <Route path="/rechargeAnalytics" component={rechargeAnalytics} />
+        <Route path="/regionAnalytics" component={regionAnalytics}/>
       {/* </Switch> */}
     </div>
   )

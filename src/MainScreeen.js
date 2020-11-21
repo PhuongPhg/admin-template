@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-do
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments, } from '@fortawesome/free-regular-svg-icons';
 import { faCog, faBell} from '@fortawesome/free-solid-svg-icons';
-import Dashboard from './Dashboard.js';
+import Dashboard from './components/Dashboard.js';
 import { NavigationBar } from './components/NavigationBar';
 import Sidebar from './components/Sidebar';
 

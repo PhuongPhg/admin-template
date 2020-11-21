@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUser} from '@fortawesome/free-solid-svg-icons'
-import Dashboard from '../Dashboard.js';
+import Dashboard from './Dashboard.js';
 // import MaterialIcon, {colorPalette} from 'material-icons-react';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import BarChartIcon from '@material-ui/icons/BarChart';
@@ -18,6 +18,8 @@ import PersonIcon from '@material-ui/icons/Person';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import userAnalytics from './Analytics/userAnalytics.js';
 import loanAnalytics from './Analytics/loanAnalytics';
+import rechargeAnalytics from './Analytics/rechargeAnalytics';
+import regionAnalytics from './Analytics/regionAnalytics';
 
 const StyledSideNav = styled.div`
   position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
@@ -119,6 +121,7 @@ export default class Sidebar extends React.Component {
                   onMouseEnter={() => this.setState({showSmallerIcon: true})}
                   onMouseLeave={() => this.setState({showSmallerIcon: false})}
                   >
+                    <Link to="/rechargeAnalytics">
                     <Tooltip title={<div style={{fontSize: 13}}>Recharge Analytics</div>}>
                     <IconButton aria-label="analytics">
                     <LocalAtmIcon  style={{flex: 1, fontSize: 30}}
@@ -127,11 +130,13 @@ export default class Sidebar extends React.Component {
                       style={(this.state.hover  && this.state.smallerKey=='recharge') ? {color: 'white', fontSize: 30} : {color: 'rgba(255,255,255,0.7)', fontSize: 30}}/>
                       </IconButton>
                     </Tooltip>
+                    </Link>
                   </div>
                   <div style={{padding: 10, textAlign: "center", }}
                   onMouseEnter={() => this.setState({showSmallerIcon: true})}
                   onMouseLeave={() => this.setState({showSmallerIcon: false})}
                   >
+                    <Link to="/regionAnalytics">
                     <Tooltip title={<div style={{fontSize: 13}}>Region Analytics</div>}>
                     <IconButton aria-label="analytics">
                     <RoomIcon  style={{flex: 1, fontSize: 30}}
@@ -140,12 +145,13 @@ export default class Sidebar extends React.Component {
                       style={(this.state.hover  && this.state.smallerKey=='region') ? {color: 'white', fontSize: 30} : {color: 'rgba(255,255,255,0.7)', fontSize: 30}}/>
                       </IconButton>
                     </Tooltip>
+                    </Link>
                   </div>
                   </div>
                   ) 
                   : (null)
                 }
-                <div style={{padding: 10, textAlign: "center"}}>
+                {/* <div style={{padding: 10, textAlign: "center"}}>
                     <Link to='/analytics'>
                       <Tooltip title={<div style={{fontSize: 13}}>Profile</div>}>
                         <IconButton aria-label="analytics">
@@ -156,15 +162,17 @@ export default class Sidebar extends React.Component {
                         </IconButton>
                       </Tooltip>   
                     </Link>
-                </div>
+                </div> */}
             </div>
         </StyledSideNav>
-        <Switch>
+        {/* <Switch> */}
         <Route exact path="/" component={Dashboard} />
         <Route path="/analytics" component={Analytics} />
         <Route path="/userAnalytics" component={userAnalytics} />
         <Route path="/loanAnalytics" component={loanAnalytics} />
-      </Switch>
+        <Route path="/rechargeAnalytics" component={rechargeAnalytics}/>
+        <Route path="/regionAnalytics" component={regionAnalytics}/>
+      {/* </Switch> */}
       </div>
     );
   }

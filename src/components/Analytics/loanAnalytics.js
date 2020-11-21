@@ -16,7 +16,14 @@ export default function loanAnalytics(){
         <Chart options={totalRecharge.options} 
           series={totalRecharge.series} type="bar" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>          
       </div>
+      <div className="table-div" style={{flex: 1, padding: 0}}>
+        <ReactFlexyTable 
+          data={dataList} 
+          sortable 
+          globalSearch
+          pageSize={5}
+        />
+      </div>
     </div>
-    // </div>
   )
 }

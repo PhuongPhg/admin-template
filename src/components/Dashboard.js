@@ -1,12 +1,12 @@
 import React, {Component, useState} from 'react';
 import styled from 'styled-components';
 import ReactFlexyTable from "react-flexy-table";
-import dataList from './jsonData';
-import './tableUser.css';
+import dataList from '../jsonData';
+import '../tableUser.css';
 import Chart from "react-apexcharts";
-import './backgroundColor.css';
-import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from './dataGraph';
-import Sidebar from './components/Sidebar';
+import '../backgroundColor.css';
+import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../dataGraph';
+
 
 const Styles = styled.div`
   .left-half, .right-half{
@@ -49,7 +49,6 @@ const Styles = styled.div`
   
 export default function Dashboard(){
   const [content, setContent] = useState("");
-  
   
   return(
     
