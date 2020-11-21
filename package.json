@@ -34,7 +34,8 @@
     "react-simple-maps": "^2.1.2",
     "react-tooltip": "^4.2.10",
     "styled-components": "^5.2.1",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "yarn": "^1.22.10"
   },
   "scripts": {
     "start": "react-scripts start",
