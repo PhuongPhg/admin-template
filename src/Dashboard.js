@@ -6,6 +6,7 @@ import './tableUser.css';
 import Chart from "react-apexcharts";
 import './backgroundColor.css';
 import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from './dataGraph';
+import Sidebar from './components/Sidebar';
 
 const Styles = styled.div`
   .left-half, .right-half{
@@ -51,8 +52,10 @@ export default function Dashboard(){
   
   
   return(
-    // <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
-    <div className="backgroundInner">
+    
+    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
+    {/* <div className="backgroundInner"> */}
+    {/* <Sidebar /> */}
     <Styles>
       <div style={{display: 'flex', flexDirection: 'row', }}>
         <div className="left-half" style={{flex:1, flexDirection: 'column', justifyContent: "space-between"}} >

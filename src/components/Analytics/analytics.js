@@ -54,7 +54,8 @@ const Styles = styled.div`
 
 export default function Analytics() {
   return (
-    <div className="backgroundInner">
+    // <div className="backgroundInner">
+    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
       <Styles>
         <div style={{display: "flex"}}>
           <div style={{flex: 1}}>

@@ -85,7 +85,7 @@ export default function App(){
 // }
 function LogIn(){
   const classes = useStyles();
-  const [isLogged, setIsLoged]=useState(true);
+  const [isLogged, setIsLoged]=useState(false);
   const[email, setEmail]=useState('');
   const [pass, setPass]= useState('');
 
