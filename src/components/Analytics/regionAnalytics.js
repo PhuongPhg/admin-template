@@ -6,7 +6,7 @@ import {totalCallTime, totalData, rateOfUser, dataLoanAndRecharge} from './regio
 
 export default function regionAnalytics(){
   return(
-    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', height: '150vh'}}>
+    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', height: '100vh'}}>
       <div style={{display: "flex", flexDirection: 'column'}}>
         <div style={{flex: 1, display: 'flex'}}>
           <div className="table-div" style={{flex: 1}}>

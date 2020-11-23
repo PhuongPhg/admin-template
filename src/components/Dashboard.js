@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import styled from 'styled-components';
 import ReactFlexyTable from "react-flexy-table";
 import dataList from '../jsonData';
@@ -6,18 +6,10 @@ import '../tableUser.css';
 import Chart from "react-apexcharts";
 import '../backgroundColor.css';
 import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../dataGraph';
-
+import SearchIcon from '@material-ui/icons/Search';
+import axios from "axios";
 
 const Styles = styled.div`
-  .left-half, .right-half{
-    display: inline-block;
-    width: 45%;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    height: 260px;
-    margin-top: 1px;
-  };
   .table-div{
     padding: 1rem;
     background-color: white;
@@ -28,15 +20,6 @@ const Styles = styled.div`
   };
   p{
     font-size: 20px;
-  };
-  .left-compo{
-    border-radius: 20px;
-    padding: 0.5rem 0;
-    background-color: white;
-    flex: 1;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
   };
   .graText{
     text-transform: uppercase;
@@ -49,25 +32,43 @@ const Styles = styled.div`
   
 export default function Dashboard(){
   const [content, setContent] = useState("");
-  
+  const [test, setTest] = useState("");
+  const additionalCols = [
+    {
+      header: 'Actions',
+      td: (data) => {
+        return (
+          <div>
+            <SearchIcon
+              onClick={() => console.log('this is delete for id ' + data.id)}
+            />
+          </div>
+        )
+      }
+    }
+  ]
+  // useEffect(()=>{
+  //   axios.get("http://localhost:5000/getUserDetail").then(res => {
+  //     setTest(res.data);
+  //     // console.log(test);
+  //   });
+  // })
   return(
     
     <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
-    {/* <div className="backgroundInner"> */}
-    {/* <Sidebar /> */}
     <Styles>
       <div style={{display: 'flex', flexDirection: 'row', }}>
-        <div className="left-half" style={{flex:1, flexDirection: 'column', justifyContent: "space-between"}} >
-          <div className="left-compo" style={{marginBottom: 20}}>
-            <h4 style={{marginTop: 10}}>Active User</h4>
+        <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
+          <div className="table-div" style={{marginBottom: 20, flex: 1, textAlign: 'center'}}>
+            <p style={{fontSize: '1.5rem',marginTop: 10}}>Active User</p>
             <p className= "graText" >300.000/400.000</p>
           </div>
-          <div className="left-compo">
-            <h4 style={{marginTop: 10}}>Total number of successful calls</h4>
+          <div className="table-div" style={{flex: 1, textAlign: 'center'}}>
+            <p style={{marginTop: 10, fontSize: '1.5rem'}}>Total number of successful calls</p>
             <p className="graText">300.500.000</p>
           </div>
         </div>
-        <div className="right-half" style={{backgroundColor: 'white', flex:2, justifyContent: 'space-between'}}>
+        <div className="table-div" style={{flex: 2}}>
           <h4 style={{marginLeft: 15, marginTop: 15}}>The total amount of money spent over time</h4>
           <Chart options={totalMoneyOverTime .options} 
             series={totalMoneyOverTime .series} type="area" height="200" width="97%" style={{marginTop: 0, alignItem: 'center'}}/>
@@ -75,8 +76,8 @@ export default function Dashboard(){
       </div>
       <div style={{display: 'flex', flexDirection: 'row', }}>
         <div className="table-div" style={{flex: 1, padding: 0}}>
-          <h4 style={{marginLeft: 15, marginTop: 15, paddingBottom: 10}}>User's geographical distribution</h4>
-          <Chart options={geoDistribution.options} series={geoDistribution.series} type="pie"/>
+          <p style={{marginLeft: 15, marginTop: 15, paddingBottom: 10,fontSize: '1.5rem'}}>User's geographical distribution</p>
+          <Chart options={geoDistribution.options} series={geoDistribution.series} type="pie" width="90%"/>
         </div>
         <div className="table-div" style={{ flex: 2, padding: 10}}>
           <ReactFlexyTable 
@@ -84,16 +85,9 @@ export default function Dashboard(){
             sortable 
           globalSearch
           pageSize={5}
+          additionalCols={additionalCols}
           />
-          {/* <h4 style={{marginLeft: 15, marginTop: 15}}>The total time the call was completed</h4>
-          <Chart options={totalTimeOfEachCall.options} 
-            series={totalTimeOfEachCall.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/> */}
         </div>
-        {/* <div className="table-div" style={{ flex: 1, padding: 10}}>
-          <h4 style={{marginLeft: 15, marginTop: 15}}>Total amount of data used</h4>
-          <Chart options={totalTimeOfEachCall.options} 
-            series={totalTimeOfEachCall.series} type="area" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
-        </div> */}
       </div>
     </Styles>
     </div>

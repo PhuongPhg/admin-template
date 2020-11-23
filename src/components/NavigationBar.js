@@ -56,7 +56,7 @@ const Styles = styled.div`
 `;
 export const NavigationBar = () => (
   <Styles style={{position: 'sticky'}}>
-    <Navbar expand="lg"  >
+    <Navbar expand="lg" style={{paddingTop: 10}} >
       {/* <Navbar.Brand href="/">   
         <img src={require("../assets/HDLogo.png")} width="150" crop="scale"
               className="d-inline-block align-top"/>
@@ -67,14 +67,13 @@ export const NavigationBar = () => (
       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto cl-effect-1">
-          <Nav.Item><Nav.Link href="/about" >Setting</Nav.Link></Nav.Item>
+          {/* <Nav.Item><Nav.Link href="/about" >Setting</Nav.Link></Nav.Item> */}
           <div style={{flexDirection: 'row', }}>
             <img src={user.avatar} width="50" crop="scale" style={{borderRadius: 25}}
               className="d-inline-block align-top"/>
               <Navbar.Text style={{padding:0,textAlign:"left", color: 'white', marginLeft: 10}}>
               <h6 style={{marginBottom:0}}>{user.username}</h6>
               <div>{user.status}</div>
-              {/* <Nav.Link href="#" >{user.username}</Nav.Link> */}
               </Navbar.Text>  
           </div>
         </Nav>

@@ -10,7 +10,7 @@ import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge 
 export default function userAnalytics(){
   return(
     // <div className="backgroundInner">
-    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
+    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', height: '110vh' }}>
       <div style={{display: "flex", flexDirection: "column"}}>
         <div style={{flex: 1, display: 'flex', justifyContent: 'space-between'}}>
           <div className="table-div" style={{flex: 1, padding: 0}}>

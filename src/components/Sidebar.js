@@ -2,8 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faUser} from '@fortawesome/free-solid-svg-icons'
 import Dashboard from './Dashboard.js';
 // import MaterialIcon, {colorPalette} from 'material-icons-react';
 import DashboardIcon from '@material-ui/icons/Dashboard';

@@ -36,15 +36,6 @@ const Styles = styled.div`
   p{
     font-size: 20px;
   };
-  .left-compo{
-    border-radius: 20px;
-    padding: 0.5rem 0;
-    background-color: white;
-    flex: 1;
-    text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
-  };
   .graText{
     text-transform: uppercase;
 	background: linear-gradient(to right, #19adb1 0%,  #0a6dc3 100%);
@@ -57,7 +48,7 @@ const Styles = styled.div`
 export default function Analytics() {
   return (
     // <div className="backgroundInner">
-    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
+    <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', height: '100vh'}}>
       <Styles>
         <div style={{display: "flex"}}>
           <div style={{flex: 1}}>

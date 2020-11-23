@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import MainScreen from './MainScreeen';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -19,6 +19,7 @@ import {
   Route,
 } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   Container: {
@@ -88,16 +89,30 @@ function LogIn(){
   const [isLogged, setIsLoged]=useState(false);
   const[email, setEmail]=useState('');
   const [pass, setPass]= useState('');
+  const [emailCf, setEmailCf]=useState('');
+  const [passCf, setPassCf] = useState('');
 
   let history = useHistory()
 
-  const onSubmit = () =>{
-    if((email == testLogged.email) && (pass == testLogged.password)){
+  async function onSubmit(){
+    if((email == emailCf) && (pass == passCf)){
       setIsLoged(true);
       console.log(isLogged);
       history.push("/MainScreen")
     }
+    // let res = await axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})
+    // console.log(res.data)
   }
+  useEffect(() => {
+    axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})
+    .then(function(res){
+      // console.log(res.data);
+      setEmailCf(res.data[0].email);
+      setPassCf(res.data[0].password);
+      // console.log(res.data[0].email)
+    })
+    .catch(function(error){console.log(error)})
+  })
   const updateEmail = (text) =>{
     setEmail(text);
   }
@@ -186,7 +201,21 @@ function LogIn(){
 }
 function SignUp(){
   const classes = useStyles();
-  let history = useHistory()
+  let history = useHistory();
+  const [lastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [ emailUp, setEmailUp]= useState('');
+  const[passUp, setPassUp] = useState('');
+
+  async function onCreate() {
+    const data = {
+      name: firstName + " " + lastName,
+      email: emailUp,
+      password: passUp
+    };
+    let res = await axios.post('http://localhost:5000/api/user/signup', data)
+    console.log(res.data)
+  }
   return (
     <div className='backgroundColor'>
       <Container component="main" maxWidth="xs" >
@@ -217,6 +246,7 @@ function SignUp(){
             InputLabelProps={{
               style: { color: '#e8f1ed' },
             }}
+            value={firstName} onInput={e => setFirstName(e.target.value)}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -235,6 +265,7 @@ function SignUp(){
             InputLabelProps={{
               style: { color: '#e8f1ed' },
             }}
+            value={lastName} onInput={e => setLastName(e.target.value)}
             />
           </Grid>
           </Grid>
@@ -255,6 +286,7 @@ function SignUp(){
             InputLabelProps={{
               style: { color: '#e8f1ed' },
             }}
+            value={emailUp} onInput={e => setEmailUp(e.target.value)}
             />
             <TextField
             variant="outlined"
@@ -273,13 +305,14 @@ function SignUp(){
             InputLabelProps={{
               style: { color: '#e8f1ed' },
             }}
+            value={passUp} onInput={e => setPassUp(e.target.value)}
             />
             <FormControlLabel
             control={<Checkbox value="remember" style={{color:'#e8f1ed'}}/>}
             label="Remember me"
             />
             <Button
-            // onClick={onSubmit}
+            onClick={onCreate}
             type="submit"
             fullWidth
             variant="contained"
