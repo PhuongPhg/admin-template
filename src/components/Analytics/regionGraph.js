@@ -1,7 +1,7 @@
 export const totalCallTime = {
   series: [{
     name: "Time",
-    data: [20, 41, 35, 51, 49 ]
+    data: [132178288.0, 38595568.0, 30415087.0,  59638468.0,  61336380.0]
 }],
 options: {
   chart: {
@@ -27,7 +27,7 @@ options: {
     curve: 'straight'
   },
   xaxis: {
-    categories: ['Ha Noi', 'HCM', 'Nha Trang', 'Da Nang', 'others']
+    categories: ['H004', 'T008', 'A076', 'N038', 'T037']
   },
   tooltip: {
     y: {
@@ -68,7 +68,7 @@ options: {
     curve: 'straight'
   },
   xaxis: {
-    categories: ['Ha Noi', 'HCM', 'Nha Trang', 'Da Nang', 'others']
+    categories: ['H004', 'T008', 'A076', 'N038', 'T037']
   },
   tooltip: {
     y: {
@@ -81,7 +81,7 @@ options: {
 }
 
 export const rateOfUser = {
-  series: [2000, 1410, 1355, 1151, 749 ],
+  series: [4130 + 4174, 2124 + 2018,  1978 + 1925, 1711 + 1502, 1668 + 1699],
   options: {
     chart: {
       width: '100%',
@@ -94,7 +94,7 @@ export const rateOfUser = {
         }
       }
     },
-    labels: ['Ha Noi', 'HCM', 'Nha Trang', 'Da Nang', 'others'],
+    labels: ['H004', 'T008', 'A076', 'N038', 'T037'],
     theme: {
       monochrome: {
         enabled: true,

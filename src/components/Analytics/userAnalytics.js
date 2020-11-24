@@ -5,7 +5,8 @@ import ReactFlexyTable from "react-flexy-table";
 import '../../tableUser.css';
 import dataList from '../../jsonData';
 import Chart from "react-apexcharts";
-import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../../dataGraph';
+import {dataUsed} from './analyticsGraph';
+import {moneyFlow, totalCalls} from './userGraph';
 
 export default function userAnalytics(){
   return(
@@ -15,18 +16,18 @@ export default function userAnalytics(){
         <div style={{flex: 1, display: 'flex', justifyContent: 'space-between'}}>
           <div className="table-div" style={{flex: 1, padding: 0}}>
             <h4 style={{marginLeft: 15, marginTop: 15, paddingBottom: 10}}>Total calls</h4>
-            <Chart options={totalTimeOfEachCall.options} 
-              series={totalTimeOfEachCall.series} type="line" height="75%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
+            <Chart options={totalCalls.options} 
+              series={totalCalls.series} type="line" height="75%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
           </div>
           <div className="table-div" style={{flex: 1, padding: 0}}>
             <h4 style={{marginLeft: 15, marginTop: 15, paddingBottom: 10}}>Amount of data used</h4>
-            <Chart options={totalTimeOfEachCall.options} 
-              series={totalTimeOfEachCall.series} type="bar" height="75%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
+            <Chart options={dataUsed.options} 
+              series={dataUsed.series} type="bar" height="75%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
           </div>
           <div className="table-div" style={{flex: 1, padding: 0}}>
-            <h4 style={{marginLeft: 15, marginTop: 15, paddingBottom: 10}}>Total amount spent, deposited, borrowed</h4>
-            <Chart options={totalRecharge.options} 
-            series={totalRecharge.series} type="bar" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
+            <h4 style={{marginLeft: 15, marginTop: 15, paddingBottom: 10}}>Money Flow</h4>
+            <Chart options={moneyFlow.options} 
+            series={moneyFlow.series} type="bar" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
           </div>
         </div>
         

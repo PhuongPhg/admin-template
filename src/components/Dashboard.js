@@ -92,11 +92,11 @@ export default function Dashboard(){
         <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
           <div className="table-div" style={{marginBottom: 20, flex: 1, textAlign: 'center'}}>
             <p style={{fontSize: '1.5rem',marginTop: 10}}>Active User</p>
-            <p className= "graText" >300.000/400.000</p>
+            <p className= "graText" >115.134</p>
           </div>
           <div className="table-div" style={{flex: 1, textAlign: 'center'}}>
             <p style={{marginTop: 10, fontSize: '1.5rem'}}>Total number of successful calls</p>
-            <p className="graText">300.500.000</p>
+            <p className="graText"> 24.428.087</p>
           </div>
         </div>
         <div className="table-div" style={{flex: 2}}>
@@ -111,9 +111,9 @@ export default function Dashboard(){
           <Chart options={geoDistribution.options} series={geoDistribution.series} type="pie" width="90%"/>
         </div>
         <div className="table-div" style={{ flex: 2, padding: 10}}>
-        < h4 style={{marginLeft: 15, marginTop: 15}}>Call time and data usage</h4>
+        < h4 style={{marginLeft: 15, marginTop: 15}}>Data usage</h4>
           <Chart options={callTimeAndDataUsage.options} 
-              series={callTimeAndDataUsage.series} type="line" height="90%" width="97%" style={{marginTop: 0, alignItem: 'center'}}/>
+              series={callTimeAndDataUsage.series} type="line" height="70%" width="97%" style={{marginTop: 0, alignItem: 'center'}}/>
         </div>
       </div>
     </Styles>
