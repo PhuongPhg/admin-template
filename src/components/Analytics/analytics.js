@@ -4,7 +4,7 @@ import './analytics.css';
 import styled from 'styled-components';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import Chart from "react-apexcharts";
-import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../../dataGraph';
+// import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../../dataGraph';
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import userAnalytics from './userAnalytics';
@@ -14,6 +14,7 @@ import regionAnalytics from './regionAnalytics';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 import RoomIcon from '@material-ui/icons/Room';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import {totalTimeCallCompleted, dataUsed, loanAmount, amountReturn, totalRechargeAmount} from './analyticsGraph.js';
 
 const Styles = styled.div`
   .left-half, .right-half{
@@ -114,31 +115,31 @@ export default function Analytics() {
           pageSize={5}
           /> */}
           <h4 style={{marginLeft: 15, marginTop: 15}}>The total time the call was completed</h4>
-          <Chart options={totalTimeOfEachCall.options} 
-            series={totalTimeOfEachCall.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
+          <Chart options={totalTimeCallCompleted.options} 
+            series={totalTimeCallCompleted.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
         </div>
         <div className="table-div" style={{ flex: 2, padding: 10}}>
           <h4 style={{marginLeft: 15, marginTop: 15}}>Total amount of data used</h4>
-          <Chart options={totalTimeOfEachCall.options} 
-            series={totalTimeOfEachCall.series} type="area" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
+          <Chart options={dataUsed.options} 
+            series={dataUsed.series} type="area" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
         </div>
       </div>
       
       <div style={{display: 'flex', flexDirection: 'row', }}>
         <div className="table-div" style={{flex: 1, padding: 0}}>
           <h4 style={{marginLeft: 15, marginTop: 15, paddingBottom: 10}}>Total loan amount</h4>
-          <Chart options={totalTimeOfEachCall.options} 
-            series={totalTimeOfEachCall.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
+          <Chart options={loanAmount.options} 
+            series={loanAmount.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
         </div>
         <div className="table-div" style={{ flex: 1, padding: 10}}>
           <h4 style={{marginLeft: 15, marginTop: 15}}>Total amount collected (after lending)</h4>
-          <Chart options={totalTimeOfEachCall.options} 
-            series={totalTimeOfEachCall.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
+          <Chart options={amountReturn.options} 
+            series={amountReturn.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
         </div>
         <div className="table-div" style={{ flex: 1, padding: 10}}>
           <h4 style={{marginLeft: 15, marginTop: 15}}>Total recharge amount</h4>
-          <Chart options={totalRecharge.options} 
-            series={totalRecharge.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
+          <Chart options={totalRechargeAmount.options} 
+            series={totalRechargeAmount.series} type="line" height="75%" width="100%" style={{marginTop: 0, alignItem: 'center'}}/>
         </div>
       </div>
       </Styles>

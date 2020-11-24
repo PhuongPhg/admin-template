@@ -20,41 +20,8 @@ const Styles = styled.div`
     left: 25%;
     right: 25%;
   }
-  .cl-effect-1 a::before, .cl-effect-1 a::after {
-	display: inline-block;
-	opacity: 0;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-	transition: transform 0.3s, opacity 0.2s;
-}
-
-.cl-effect-1 a::before {
-	margin-right: 10px;
-	content: '[';
-	-webkit-transform: translateX(20px);
-	-moz-transform: translateX(20px);
-	transform: translateX(20px);
-}
-
-.cl-effect-1 a::after {
-	margin-left: 10px;
-	content: ']';
-	-webkit-transform: translateX(-20px);
-	-moz-transform: translateX(-20px);
-	transform: translateX(-20px);
-}
-
-.cl-effect-1 a:hover::before,
-.cl-effect-1 a:hover::after,
-.cl-effect-1 a:focus::before,
-.cl-effect-1 a:focus::after {
-	opacity: 1;
-	-webkit-transform: translateX(0px);
-	-moz-transform: translateX(0px);
-	transform: translateX(0px);
-}
 `;
-export const NavigationBar = () => (
+export const NavigationBar = ({name}) => (
   <Styles style={{position: 'sticky'}}>
     <Navbar expand="lg" style={{paddingTop: 10}} >
       {/* <Navbar.Brand href="/">   
@@ -72,7 +39,8 @@ export const NavigationBar = () => (
             <img src={user.avatar} width="50" crop="scale" style={{borderRadius: 25}}
               className="d-inline-block align-top"/>
               <Navbar.Text style={{padding:0,textAlign:"left", color: 'white', marginLeft: 10}}>
-              <h6 style={{marginBottom:0}}>{user.username}</h6>
+              {/* <h6 style={{marginBottom:0}}>{user.username}</h6> */}
+              <h6 style={{marginBottom:0}}>{name}</h6>
               <div>{user.status}</div>
               </Navbar.Text>  
           </div>

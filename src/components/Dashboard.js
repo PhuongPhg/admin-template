@@ -5,7 +5,7 @@ import dataList from '../jsonData';
 import '../tableUser.css';
 import Chart from "react-apexcharts";
 import '../backgroundColor.css';
-import {totalMoneyOverTime, geoDistribution, } from './dashboardGraph';
+import {totalMoneyOverTime, geoDistribution, callTimeAndDataUsage } from './dashboardGraph';
 import SearchIcon from '@material-ui/icons/Search';
 import axios from "axios";
 
@@ -57,7 +57,7 @@ export default function Dashboard(){
     
     <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', }}>
     <Styles>
-      <div style={{display: 'flex'}}>
+      {/* <div style={{display: 'flex'}}>
         <div style={{display: "flex", flexDirection: 'column'}}>
           <div className="table-div" style={{marginBottom: 20, flex: 1, textAlign: 'center'}}>
             <p style={{fontSize: '1.5rem',marginTop: 10}}>Active User</p>
@@ -73,15 +73,22 @@ export default function Dashboard(){
           </div>
         </div>
 
-        <div className="table-div" style={{flex: 2}}>
-          <h4 style={{marginLeft: 15, marginTop: 15}}>The total amount of money spent over time</h4>
-          <Chart options={totalMoneyOverTime .options} 
-            series={totalMoneyOverTime .series} type="line" height="90%" width="97%" style={{marginTop: 0, alignItem: 'center'}}/>
+        <div style={{flex: 2}}>
+          <div className="table-div"  style={{flex: 1}}>
+            <h4 style={{marginLeft: 15, marginTop: 15}}>The total amount of money spent over time</h4>
+            <Chart options={totalMoneyOverTime .options} 
+              series={totalMoneyOverTime .series} type="line" height="90%" width="97%" style={{marginTop: 0, alignItem: 'center'}}/>
+          </div>
+          <div className="table-div"  style={{flex: 1}}>
+            <h4 style={{marginLeft: 15, marginTop: 15}}>Call time and data usage</h4>
+            <Chart options={callTimeAndDataUsage.options} 
+              series={callTimeAndDataUsage.series} type="line" height="90%" width="97%" style={{marginTop: 0, alignItem: 'center'}}/>
+          </div>
         </div>
-      </div>
+      </div> */}
 
 
-      {/* <div style={{display: 'flex', flexDirection: 'row', }}>
+      <div style={{display: 'flex', flexDirection: 'row', }}>
         <div style={{flex: 1, display: 'flex', flexDirection: 'column'}}>
           <div className="table-div" style={{marginBottom: 20, flex: 1, textAlign: 'center'}}>
             <p style={{fontSize: '1.5rem',marginTop: 10}}>Active User</p>
@@ -104,15 +111,11 @@ export default function Dashboard(){
           <Chart options={geoDistribution.options} series={geoDistribution.series} type="pie" width="90%"/>
         </div>
         <div className="table-div" style={{ flex: 2, padding: 10}}>
-          <ReactFlexyTable 
-            data={dataList} 
-            sortable 
-          globalSearch
-          pageSize={5}
-          additionalCols={additionalCols}
-          />
+        < h4 style={{marginLeft: 15, marginTop: 15}}>Call time and data usage</h4>
+          <Chart options={callTimeAndDataUsage.options} 
+              series={callTimeAndDataUsage.series} type="line" height="90%" width="97%" style={{marginTop: 0, alignItem: 'center'}}/>
         </div>
-      </div> */}
+      </div>
     </Styles>
     </div>
     

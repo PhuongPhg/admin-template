@@ -76,10 +76,13 @@ export const geoDistribution ={
     }]
 }}}
 
-export const totalTimeOfEachCall = {
+export const callTimeAndDataUsage = {
   series: [{
-    name: "time",
-    data: ['3.50s', 6.9, 1.30, 4.10, 5.1, 4.9, 6.2]
+    name: "call time",
+    data: [3.5, 6.9, 1.30, 4.10, 5.1, 4.9, 6.2]
+  },{
+    name: "data usage",
+    data: [2.3, 3.9, 5.30, 1.10, 2.1, 6.9, 3.2]
   }],
 options: {
   chart: {
@@ -92,12 +95,7 @@ options: {
       show: false
     }
   },
-  tooltip: {
-  custom: function({series, seriesIndex, dataPointIndex, w}) {
-    return '<span>' + series[seriesIndex][dataPointIndex] +'s' + '</span>'
-  }
-},
-  colors: ["#a84d2f"],
+  colors: ["#19adb1", " #0a6dc3"],
   dataLabels: {
     enabled: false
   },
