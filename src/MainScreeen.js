@@ -21,18 +21,6 @@ export default class MainScreen extends Component {
     )
   }
 }
-function item2(){
-  return <p>item2</p>
-}
-
-function item3(){
-  return <p>item3</p>
-}
-
-function item4(){
-  return <p>item4</p>
-}
-
 const user = {
   username: 'Phuong Trinh',
   avatar: require("./assets/3.jpg"),

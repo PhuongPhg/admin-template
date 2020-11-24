@@ -100,8 +100,6 @@ function LogIn(){
       console.log(isLogged);
       history.push("/MainScreen")
     }
-    // let res = await axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})
-    // console.log(res.data)
   }
   useEffect(() => {
     axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})

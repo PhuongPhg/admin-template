@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch,  Redirect} from "react-router-dom";
 import ReactDOM from 'react-dom'
 import Dashboard from './Dashboard.js';
 // import MaterialIcon, {colorPalette} from 'material-icons-react';
@@ -164,7 +164,10 @@ export default class Sidebar extends React.Component {
             </div>
         </StyledSideNav>
         {/* <Switch> */}
-        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/MainScreen" render = {() => {
+          return <Redirect to="/dashboard" />
+        }} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route path="/analytics" component={Analytics} />
         <Route path="/userAnalytics" component={userAnalytics} />
         <Route path="/loanAnalytics" component={loanAnalytics} />
