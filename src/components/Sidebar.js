@@ -59,7 +59,7 @@ export default class Sidebar extends React.Component {
         <StyledSideNav onMouseLeave={() =>{ this.setState({showSmallerIcon: false})}} >
             <div style={{display: 'flex', flexDirection: "column"}}>
                 <div style={{padding: 10, textAlign: 'center', marginBottom: 10}}>
-                    <Link to='/'>
+                    <Link to='/dashboard'>
                       <Tooltip title={<div style={{fontSize: 13}}>Dashboard</div>}>
                         <IconButton aria-label="dashboard">
                           <DashboardIcon 

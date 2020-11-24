@@ -115,7 +115,7 @@ export const rateOfUser = {
       }
     },
     legend: {
-      show: false
+      show: true
     }
   },
 }

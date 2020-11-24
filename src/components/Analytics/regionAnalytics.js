@@ -15,25 +15,30 @@ export default function regionAnalytics(){
               series={totalCallTime.series} type="bar" height="90%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
           </div>
 
-          <div className="table-div" style={{flex: 1}}>
+          {/* <div className="table-div" style={{flex: 1}}>
             <h4 style={{marginTop: 10}}>Total data used by region</h4>
             <Chart options={totalData.options} 
               series={totalData.series} type="bar" height="90%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
+          </div> */}
+          <div className="table-div" style={{flex: 1}}>
+            <h4 style={{marginTop: 10}}>Rate of users per region</h4>
+            <Chart options={rateOfUser.options} 
+              series={rateOfUser.series} type="pie" style={{marginTop: 0, alignItem: 'center'}} width="70%"/>
           </div>
         </div>
 
-        <div style={{flex: 1, display: 'flex'}}>
+        {/* <div style={{flex: 1, display: 'flex'}}>
           <div className="table-div" style={{flex: 1}}>
             <h4 style={{marginTop: 10}}>Rate of users per region</h4>
             <Chart options={rateOfUser.options} 
               series={rateOfUser.series} type="pie" style={{marginTop: 0, alignItem: 'center'}}/>
           </div>
-          <div className="table-div" style={{flex: 2}}>
+          {/* <div className="table-div" style={{flex: 2}}>
             <h4 style={{marginTop: 10}}>Total loand and Recharge by region</h4>
             <Chart options={dataLoanAndRecharge.options} 
               series={dataLoanAndRecharge.series} type="bar" height="90%" width="90%" style={{marginTop: 0, alignItem: 'center'}}/>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </div>
   )
