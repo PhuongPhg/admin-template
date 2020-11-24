@@ -15,6 +15,7 @@ import Analytics from './Analytics/analytics';
 import PersonIcon from '@material-ui/icons/Person';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 import userAnalytics from './Analytics/userAnalytics.js';
+import userBasic from './Analytics/userBasic.js';
 import loanAnalytics from './Analytics/loanAnalytics';
 import rechargeAnalytics from './Analytics/rechargeAnalytics';
 import regionAnalytics from './Analytics/regionAnalytics';
@@ -89,8 +90,23 @@ export default class Sidebar extends React.Component {
                   onMouseEnter={() => this.setState({showSmallerIcon: true})}
                   onMouseLeave={() => this.setState({showSmallerIcon: false})}
                   >
+                    <Link to="/userBasic">
+                    <Tooltip title={<div style={{fontSize: 13}}>User Basic Info</div>}>
+                    <IconButton aria-label="analytics">
+                    <PeopleAltIcon  style={{flex: 1, fontSize: 30}}
+                      onMouseOver={() => this.setState({hover: true, key: '', smallerKey: 'user'})}
+                      onMouseOut={() => this.setState({hover: false, key:'', smallerKey: ''})}
+                      style={(this.state.hover  && this.state.smallerKey=='user') ? {color: 'white', fontSize: 30} : {color: 'rgba(255,255,255,0.7)', fontSize: 30}}/>
+                      </IconButton>
+                    </Tooltip>
+                    </Link>
+                  </div>
+                  <div style={{padding: 10, textAlign: "center", }}
+                  onMouseEnter={() => this.setState({showSmallerIcon: true})}
+                  onMouseLeave={() => this.setState({showSmallerIcon: false})}
+                  >
                     <Link to="/userAnalytics">
-                    <Tooltip title={<div style={{fontSize: 13}}>User Analytics</div>}>
+                    <Tooltip title={<div style={{fontSize: 13}}>User Asnalytics</div>}>
                     <IconButton aria-label="analytics">
                     <PeopleAltIcon  style={{flex: 1, fontSize: 30}}
                       onMouseOver={() => this.setState({hover: true, key: '', smallerKey: 'user'})}
@@ -170,6 +186,7 @@ export default class Sidebar extends React.Component {
         <Route exact path="/dashboard" component={Dashboard} />
         <Route path="/analytics" component={Analytics} />
         <Route path="/userAnalytics" component={userAnalytics} />
+        <Route path="/userBasic" component={userBasic} />
         <Route path="/loanAnalytics" component={loanAnalytics} />
         <Route path="/rechargeAnalytics" component={rechargeAnalytics}/>
         <Route path="/regionAnalytics" component={regionAnalytics}/>

@@ -3,7 +3,7 @@ import './backgroundInner.css';
 import './analytics.css';
 import ReactFlexyTable from "react-flexy-table";
 import '../../tableUser.css';
-import dataList from '../../jsonData';
+import dataList from '../../loan_info.json';
 import Chart from "react-apexcharts";
 // import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../../dataGraph';
 import {loan} from './loanGraph'

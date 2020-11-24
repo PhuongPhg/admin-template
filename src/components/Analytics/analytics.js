@@ -8,6 +8,7 @@ import Chart from "react-apexcharts";
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import userAnalytics from './userAnalytics';
+import userBasic from './userBasic';
 import loanAnalytics from './loanAnalytics';
 import rechargeAnalytics from './rechargeAnalytics';
 import regionAnalytics from './regionAnalytics';
@@ -52,6 +53,14 @@ export default function Analytics() {
     <div style={{marginLeft: 140, borderTopLeftRadius: 20,  paddingLeft: 20, paddingTop: 20, backgroundColor: '#e8f1ed', overflow: 'hidden', height: '100vh'}}>
       <Styles>
         <div style={{display: "flex"}}>
+          <div style={{flex: 1}}>
+            <Link to="/userBasic">
+              <div className="table-div" style={{ flex: 1, padding: 10, textAlign: 'center' }}>
+                <PeopleAltIcon style={{ fontSize: 40, marginTop: 20 }}/>
+                <h4 style={{paddingTop: 15}}>User Basic Info</h4>
+              </div>
+            </Link>
+          </div>
           <div style={{flex: 1}}>
             <Link to="/userAnalytics">
               <div className="table-div" style={{ flex: 1, padding: 10, textAlign: 'center' }}>
@@ -145,6 +154,7 @@ export default function Analytics() {
       </Styles>
       {/* <Switch> */}
         {/* <Route exact path="/" component={Dashboard} /> */}
+        <Route path="/userBasic" component={userBasic} />
         <Route path="/userAnalytics" component={userAnalytics} />
         <Route path="/loanAnalytics" component={loanAnalytics} />
         <Route path="/rechargeAnalytics" component={rechargeAnalytics} />

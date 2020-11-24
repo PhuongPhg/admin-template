@@ -3,10 +3,12 @@ import '../../backgroundColor.css';
 import './analytics.css';
 import ReactFlexyTable from "react-flexy-table";
 import '../../tableUser.css';
-import dataList from '../../jsonData';
+import dataList from '../../user_overall';
 import Chart from "react-apexcharts";
 import {dataUsed} from './analyticsGraph';
 import {moneyFlow, totalCalls} from './userGraph';
+
+console.log(dataList)
 
 export default function userAnalytics(){
   return(

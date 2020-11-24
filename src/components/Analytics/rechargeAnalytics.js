@@ -5,7 +5,7 @@ import Chart from "react-apexcharts";
 import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../../dataGraph';
 import {cardAndVirtual} from './rechargeGraph';
 import '../../tableUser.css';
-import dataList from '../../jsonData';
+import dataList from '../../recharge_info';
 import ReactFlexyTable from "react-flexy-table";
 
 export default function rechargeAnalytics(){
