@@ -2,7 +2,7 @@ import React, {Component, useState} from 'react';
 import '../../backgroundColor.css';
 import './analytics.css';
 import ReactFlexyTable from "react-flexy-table";
-import '../../tableUser.css';
+import './tableUserAnalytics.css';
 import dataList from '../../user_overall';
 import Chart from "react-apexcharts";
 import {dataUsed} from './analyticsGraph';

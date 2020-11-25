@@ -190,6 +190,11 @@ function LogIn(){
                   Forgot password?
                 </Link>
               </Grid>
+              <Grid item >
+                <Link href="#" variant="body2" style={{color: '#e8f1ed'}}>
+                  To log in, use "fake" for both Text Field.
+                </Link>
+              </Grid>
               {/* <Grid item>
                 <Link href="/SignUp" variant="body2" style={{color: '#e8f1ed'}} 
                 >

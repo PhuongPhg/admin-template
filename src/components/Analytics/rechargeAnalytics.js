@@ -2,7 +2,6 @@ import React, {Component, useState} from 'react';
 import './backgroundInner.css';
 import './analytics.css';
 import Chart from "react-apexcharts";
-import {totalMoneyOverTime, geoDistribution, totalTimeOfEachCall, totalRecharge } from '../../dataGraph';
 import {cardAndVirtual} from './rechargeGraph';
 import '../../tableUser.css';
 import dataList from '../../recharge_info';
