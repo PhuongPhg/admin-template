@@ -94,23 +94,25 @@ function LogIn(){
 
   let history = useHistory()
 
-  async function onSubmit(){
-    if((email == emailCf) && (pass == passCf)){
+  // async function onSubmit(){
+  const onSubmit=()=>{
+    // if((email == emailCf) && (pass == passCf)){
+    if((email == "fake") && (pass == "fake")){
       setIsLoged(true);
       console.log(isLogged);
       history.push("/MainScreen")
     }
   }
-  useEffect(() => {
-    axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})
-    .then(function(res){
-      // console.log(res.data);
-      setEmailCf(res.data[0].email);
-      setPassCf(res.data[0].password);
-      // console.log(res.data[0].email)
-    })
-    .catch(function(error){console.log(error)})
-  })
+  // useEffect(() => {
+  //   axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})
+  //   .then(function(res){
+  //     // console.log(res.data);
+  //     setEmailCf(res.data[0].email);
+  //     setPassCf(res.data[0].password);
+  //     // console.log(res.data[0].email)
+  //   })
+  //   .catch(function(error){console.log(error)})
+  // })
   const updateEmail = (text) =>{
     setEmail(text);
   }
@@ -182,6 +184,11 @@ function LogIn(){
               <Grid item xs>
                 <Link href="#" variant="body2" style={{color: '#e8f1ed'}}>
                   Forgot password?
+                </Link>
+              </Grid>
+              <Grid item >
+                <Link href="#" variant="body2" style={{color: '#e8f1ed'}}>
+                  To log in, use "fake" for both Text Field.
                 </Link>
               </Grid>
               {/* <Grid item>
