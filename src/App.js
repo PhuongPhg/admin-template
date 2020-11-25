@@ -95,22 +95,28 @@ function LogIn(){
   let history = useHistory()
 
   async function onSubmit(){
-    if((email == emailCf) && (pass == passCf)){
+    // if((email == emailCf) && (pass == passCf)){
+    //   setIsLoged(true);
+    //   console.log(isLogged);
+    //   history.push("/MainScreen")
+    // }
+
+    if((email == 'admin@admin.com') && (pass == 'admin')){
       setIsLoged(true);
       console.log(isLogged);
       history.push("/MainScreen")
     }
   }
-  useEffect(() => {
-    axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})
-    .then(function(res){
-      // console.log(res.data);
-      setEmailCf(res.data[0].email);
-      setPassCf(res.data[0].password);
-      // console.log(res.data[0].email)
-    })
-    .catch(function(error){console.log(error)})
-  })
+  // useEffect(() => {
+  //   axios.post('http://localhost:5000/api/user/signin', {email: email, password: pass})
+  //   .then(function(res){
+  //     // console.log(res.data);
+  //     setEmailCf(res.data[0].email);
+  //     setPassCf(res.data[0].password);
+  //     // console.log(res.data[0].email)
+  //   })
+  //   .catch(function(error){console.log(error)})
+  // })
   const updateEmail = (text) =>{
     setEmail(text);
   }
